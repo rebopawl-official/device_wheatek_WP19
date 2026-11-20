@@ -1,3 +1,0 @@
-makefile
-# Recovery image
-BOARD_RAMDISK_USE_LZ4 := true
