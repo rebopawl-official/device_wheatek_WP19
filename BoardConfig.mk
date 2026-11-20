@@ -90,8 +90,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
-BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
-BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4352.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
@@ -102,17 +102,21 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
+TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
+TW_INCLUDE_BUSYBOX := false
+TW_INCLUDE_PYTHON := false
+TW_INCLUDE_NTFS_3G := false
+TW_INCLUDE_FASTBOOTD := false
+TW_NO_HAPTICS := true
+TW_EXCLUDE_APEX := true
+TW_INCLUDE_CRYPTO := false
+TW_INCLUDE_CRYPTO_FBE := false
+TW_INCLUDE_FBE_METADATA_DECRYPT := false
 
 # Optional (uncomment after the first successful boot):
-# fastbootd in recovery - needed to flash GSI/super images
-#TW_INCLUDE_FASTBOOTD := true
 # /data decryption (FBE + metadata encryption). May not work: the TEE is
 # Microtrust (beanpod keymaster/gatekeeper), which TWRP/OrangeFox lack.
-#TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_CRYPTO_FBE := true
-#TW_INCLUDE_FBE_METADATA_DECRYPT := true
 #BOARD_USES_METADATA_PARTITION := true
