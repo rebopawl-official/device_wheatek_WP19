@@ -118,3 +118,6 @@ TW_INCLUDE_BUSYBOX := true
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_USE_FSCRYPT_POLICY := 2
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest.xml
+TW_FORCE_KEYMASTER_VER := true
+
